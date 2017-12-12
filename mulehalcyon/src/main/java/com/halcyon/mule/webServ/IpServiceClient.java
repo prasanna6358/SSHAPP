@@ -39,28 +39,24 @@ public class IpServiceClient {
 
             ((ChannelExec) channel).setErrStream(System.err);
 
-            InputStream in = channel.getInputStream();// get command output as a stream
+            InputStream in = channel.getInputStream();
             channel.connect();
-            byte[] tmp = new byte[1024];
-            while (true) {
-                while (in.available() > 0) {
-                    int i = in.read(tmp, 0, 1024);
-                    if (i < 0)
-                        break;
-                    System.out.print(new String(tmp, 0, i));
-                }
-                if (channel.isClosed()) {
-                    System.out.println("exit-status: " + channel.getExitStatus());
-                    break;
-                }
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception ee) {
-                }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            // StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null)
+            {
+                //sb.append(line);
+                //  sb.append("\n");
+                System.out.println(line);
             }
+            //System.out.println(sb.toString());
+            channel.setInputStream(null);
+            ((ChannelExec) channel).setErrStream(System.err);
+            sftpchannel.exit();
             channel.disconnect();
             session.disconnect();
-            System.out.println("DONE");
         } catch (Exception e) {
             e.printStackTrace();
         }
