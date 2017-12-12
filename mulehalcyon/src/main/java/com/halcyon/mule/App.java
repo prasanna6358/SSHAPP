@@ -14,6 +14,14 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
+        /*String OS_Name = System.getProperty("os.name");
+        System.out.println();
+        if(OS_Name.equalsIgnoreCase("Linux"))
+        {
+            System.out.println(OS_Name);
+            System.out.println();
+            getExceCommand("pwsh", "get-process");
+        }*/
         IpServiceClient.getSSHConnection();
     }
 
