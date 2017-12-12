@@ -17,7 +17,7 @@ public class App {
         IpServiceClient.getSSHConnection();
     }
 
-// for executing local commands in local machine
+// for executing commands in local machine
      public static void getExceCommand(String OSCommand,String command) throws IOException
       {
         StringBuilder commands = new StringBuilder(OSCommand);
