@@ -53,7 +53,6 @@ public class IpServiceClient {
             }
             //System.out.println(sb.toString());
             channel.setInputStream(null);
-            ((ChannelExec) channel).setErrStream(System.err);
             sftpchannel.exit();
             channel.disconnect();
             session.disconnect();
