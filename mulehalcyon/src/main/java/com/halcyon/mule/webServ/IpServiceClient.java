@@ -7,6 +7,13 @@ import java.io.*;
 
 public class IpServiceClient {
 
+    
+    // first I'm connecting to the client machine
+    // creating a file in client machine
+    // executing command with command1 as command
+    // getting respose as a stream
+   
+    
     public static void getSSHConnection() {
         String host = "ipaddress";
         String user = "username";
@@ -32,7 +39,7 @@ public class IpServiceClient {
 
             ((ChannelExec) channel).setErrStream(System.err);
 
-            InputStream in = channel.getInputStream();
+            InputStream in = channel.getInputStream();// get command output as a stream
             channel.connect();
             byte[] tmp = new byte[1024];
             while (true) {
