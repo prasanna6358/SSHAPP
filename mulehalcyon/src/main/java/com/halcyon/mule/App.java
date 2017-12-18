@@ -22,7 +22,7 @@ public class App {
             System.out.println();
             getExceCommand("pwsh", "get-process");
         }*/
-        IpServiceClient.getSSHConnection();
+        new IpServiceClient().getSSHConnection();
     }
 
 // for executing commands in local machine
