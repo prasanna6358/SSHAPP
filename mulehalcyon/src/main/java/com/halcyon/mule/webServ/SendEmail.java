@@ -17,8 +17,6 @@ public class SendEmail {
         // Sender's email ID needs to be mentioned
         String from = "fromsend@gmail.com";
 
-        // Assuming you are sending email from localhos
-
         // Setup mail server
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
